@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Counter = () => {
-    const [count, setCount] = useState<number>(0);
+    const [count, setCount] = useState<number>(0); // Main learning
 
   return (
     <div>

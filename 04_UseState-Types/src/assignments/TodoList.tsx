@@ -8,7 +8,7 @@ interface Todo {
 
 const TodoList: React.FC = () => {
   // Define a state variable for a list of to-do items
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]); // Main learning
 
   const addTodo = (task: string) => {
     const newTodo: Todo = {

@@ -8,7 +8,7 @@ interface UserProfile {
 
 const UserProfile = () => {
   // Define a state variable for user profile
-  const [profile, setProfile] = useState<UserProfile>({
+  const [profile, setProfile] = useState<UserProfile>({ // Main learning
     name: "",
     age: 0,
     email: "",
