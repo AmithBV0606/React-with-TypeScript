@@ -28,10 +28,45 @@ const MyForm = () => {
         <input
           type="text"
           id="name"
+          placeholder="Enter your name"
           {...register("name", { required: "Name is required" })}
         />
+        {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
+      </div>
+
+      <div>
+        <label htmlFor="email">Email : </label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"  
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address",
+            },
+          })}
+        />
+        {errors.email && (<p style={{ color: 'red' }}>{errors.email.message}</p>)}
+      </div>
+
+      <div>
+        <label htmlFor="email">password : </label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"  
+          {...register("password", {
+            required: "Password is required",
+            minLength: { value: 6, message: "Password has to be of atleast 6 letters!"},
+          })}
+        />
+        {errors.password && (<p style={{ color: "red" }}>{errors.password.message}</p>)}
+      </div>
+
+      <div>
         <button type="submit">Submit</button>
-        {errors.name && (<p style={{ color: "red" }}>{errors.name.message}</p>)}
       </div>
     </form>
   );
