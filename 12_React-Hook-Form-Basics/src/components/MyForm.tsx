@@ -17,9 +17,13 @@ const MyForm = () => {
     formState: { errors },
   } = useForm<FormData>();
 
+  //  When you call "useForm<FormData>()", you’re telling TypeScript that this form will handle data of type "FormData". This helps TypeScript provide type-checking and IntelliSense suggestions based on the "FormData" structure. This ensures that any fields or properties you access in data during form submission match the structure defined by FormData.
+
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
   };
+
+  // By typing "SubmitHandler<FormData>", you specify that "onSubmit" only accepts data of type "FormData". This prevents accidental use of invalid data structures, as TypeScript will throw an error if the submitted data doesn’t match the "FormData" shape.
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
